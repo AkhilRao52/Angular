@@ -1,9 +1,9 @@
- <h1> This is the servers component </h1>
+ <!-- <h1> This is the servers component </h1>
 <hr>
 <p> Below are the server components</p>
 
-<!-- <input type="text" class = form-control (input)="onAddInput($event)"> -->
-<input type="text" class = form-control [(ngModel)]="serverName">
+<input type="text" class = form-control (input)="onAddInput($event)"> -->
+<!-- <input type="text" class = form-control [(ngModel)]="serverName">
 <app-server></app-server>
 <app-server></app-server>
 <button class="btn btn-primary" [disabled] = "!addNewServer" (click)="onAddServer()"> add server </button>
@@ -14,4 +14,11 @@
   </div>
   <ng-template #noServer>
       <p> No server was created </p>
-  </ng-template>
+  </ng-template> -->
+
+  <button class = "btn btn-primary" (click) = "onDisplayClick()"> Display Details </button>
+  <p *ngIf="displayP"> Secret password = Tuna </p>
+  <div *ngFor="let log of logs"
+       [ngStyle]="{backgroundColor: log>5? 'blue' : 'green'}"
+       [ngClass]="{whiteText: log>5}"
+  >  {{log}} </div>
