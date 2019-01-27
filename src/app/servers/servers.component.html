@@ -1,6 +1,9 @@
 <h1> This is the servers component </h1>
 <hr>
 <p> Below are the server components</p>
+
+<input type="text" class = form-control (input)="onAddInput($event)">
+<p> {{serverName}} </p>
 <app-server></app-server>
 <app-server></app-server>
 <button class="btn btn-primary" [disabled] ="!addNewServer" (click)="onAddServer()"> add server </button>
