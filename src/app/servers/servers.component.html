@@ -2,7 +2,8 @@
 <hr>
 <p> Below are the server components</p>
 
-<input type="text" class = form-control (input)="onAddInput($event)">
+<!-- <input type="text" class = form-control (input)="onAddInput($event)"> -->
+<input type="text" class = form-control [(ngModel)]="serverName">
 <p> {{serverName}} </p>
 <app-server></app-server>
 <app-server></app-server>
