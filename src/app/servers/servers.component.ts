@@ -5,22 +5,38 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
+// export class ServersComponent {
+//     addNewServer = false;
+//     serverCreationStatus =  'No new server can be added now' ;
+//     serverName = ' ';
+//     constructor(){
+//       setTimeout(()=>{
+//         this.addNewServer = true;
+//       },10000)
+//     }
+
+//     onAddServer(){
+//       this.serverCreationStatus = 'New server added, Server name is ' + this.serverName ;
+//     }
+
+//     onAddInput(event){
+//        this.serverName = event.target.value ;
+//     }
+// }
+
 export class ServersComponent {
-    addNewServer = false;
-    serverCreationStatus =  'No new server can be added now' ;
-    serverName = ' ';
-    constructor(){
-      setTimeout(()=>{
-        this.addNewServer = true;
-      },10000)
-    }
+  userName = '';
+  addDisabled = 'false';
 
-    onAddServer(){
-      this.serverCreationStatus = 'New server added, Server name is ' + this.serverName ;
-    }
+  onAddClick(){
+    this.userName = '';
+  }
 
-    onAddInput(event){
-       this.serverName = event.target.value ;
+  addButtonDisabled(){
+    if(this.userName === ''){
+       return true;
+    } else {
+      return false;
     }
+  }
 }
-
