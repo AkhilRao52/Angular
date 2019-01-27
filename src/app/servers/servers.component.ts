@@ -16,7 +16,7 @@ export class ServersComponent {
     }
 
     onAddServer(){
-      this.serverCreationStatus = 'New server added';
+      this.serverCreationStatus = 'New server added, Server name is ' + this.serverName ;
     }
 
     onAddInput(event){
