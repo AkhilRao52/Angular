@@ -1,16 +1,17 @@
- <!-- <h1> This is the servers component </h1>
+ <h1> This is the servers component </h1>
 <hr>
 <p> Below are the server components</p>
 
-<input type="text" class = form-control (input)="onAddInput($event)">
+<!-- <input type="text" class = form-control (input)="onAddInput($event)"> -->
 <input type="text" class = form-control [(ngModel)]="serverName">
 <app-server></app-server>
 <app-server></app-server>
-<button class="btn btn-primary" [disabled] ="!addNewServer" (click)="onAddServer()"> add server </button>
-<p>{{serverCreationStatus}}</p>
-<p> {{serverName}} </p>
- -->
-
- <input type = "text" class = "form-control" [(ngModel)]="userName">
- <button class = "btn btn-primary" [disabled]="addButtonDisabled()" (click)="onAddClick()"> Add </button>
- <p>{{userName}} </p>
+<button class="btn btn-primary" [disabled] = "!addNewServer" (click)="onAddServer()"> add server </button>
+  <div *ngIf="serverCreationStatus ; else noServer" >
+      <p *ngFor="let server of serverList">
+          Server {{server}} was created
+      </p>
+  </div>
+  <ng-template #noServer>
+      <p> No server was created </p>
+  </ng-template>
