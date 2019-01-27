@@ -36,6 +36,7 @@ export class ServersComponent {
 
   onDisplayClick(){
     this.displayP = !this.displayP;
-    this.logs.push(this.logs.length + 1);
+    // this.logs.push(this.logs.length + 1);
+    this.logs.push(new Date());
   }
 }
